@@ -1,6 +1,13 @@
 .calendar-panel {
 	padding: 2rem;
 	border-radius: 18px;
+	background: var(--glass-bg);
+	border: 1px solid var(--glass-border);
+	backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+	-webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+	box-shadow: 0 18px 50px var(--glass-shadow);
+	position: relative;
+	overflow: hidden;
 }
 
 .panel-header {
@@ -28,8 +35,8 @@
 .calendar-day {
 	padding: 1rem;
 	border-radius: 16px;
-	background: rgba(255, 255, 255, 0.08);
-	border: 1px solid rgba(255, 255, 255, 0.12);
+	background: var(--color-surface-tertiary);
+	border: 1px solid var(--color-divider);
 }
 
 .calendar-day h4 {

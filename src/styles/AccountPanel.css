@@ -3,58 +3,19 @@
 	padding: 2rem;
 	max-width: 1200px;
 	margin: 0 auto;
-	--account-card-bg: rgba(255, 255, 255, 0.22);
-	--account-card-border: rgba(255, 255, 255, 0.25);
-	--account-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-	--account-card-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.35);
-	--account-card-blur: 22px;
-
-	--profile-well-bg: rgba(255, 255, 255, 0.14);
-	--profile-well-border: rgba(255, 255, 255, 0.18);
-	--profile-well-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.25);
-	--profile-well-blur: 30px;
-
-	--input-glass-bg: rgba(255, 255, 255, 0.12);
-	--input-glass-bg-focus: rgba(255, 255, 255, 0.18);
-	--input-glass-border: rgba(255, 255, 255, 0.22);
-	--input-glass-border-focus: rgba(255, 255, 255, 0.35);
-
-	--avatar-halo-bg: rgba(255, 255, 255, 0.18);
-	--avatar-halo-border: rgba(255, 255, 255, 0.35);
-	--avatar-halo-blur: 14px;
-}
-
-[data-theme='dark'] .account-panel {
-	--account-card-bg: rgba(20, 20, 20, 0.28);
-	--account-card-border: rgba(255, 255, 255, 0.18);
-	--account-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-	--account-card-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.35);
-	--account-card-blur: 22px;
-
-	--profile-well-bg: rgba(20, 20, 20, 0.18);
-	--profile-well-border: rgba(255, 255, 255, 0.18);
-	--profile-well-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.25);
-	--profile-well-blur: 30px;
-
-	--input-glass-bg: rgba(20, 20, 20, 0.22);
-	--input-glass-bg-focus: rgba(255, 255, 255, 0.18);
-	--input-glass-border: rgba(255, 255, 255, 0.22);
-	--input-glass-border-focus: rgba(255, 255, 255, 0.35);
-
-	--avatar-halo-bg: rgba(255, 255, 255, 0.10);
-	--avatar-halo-border: rgba(255, 255, 255, 0.18);
-	--avatar-halo-blur: 16px;
 }
 
 .account-header {
 	margin-bottom: 2rem;
-	padding: 5mm;
-	background: var(--account-card-bg);
-	border: 1px solid var(--account-card-border);
-	border-radius: 14px;
-	backdrop-filter: blur(var(--account-card-blur)) saturate(140%);
-	-webkit-backdrop-filter: blur(var(--account-card-blur)) saturate(140%);
-	box-shadow: var(--account-card-shadow), var(--account-card-highlight);
+	padding: 1.5rem;
+	background: var(--glass-bg);
+	border: 1px solid var(--glass-border);
+	border-radius: 16px;
+	backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+	-webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+	box-shadow: 0 18px 50px var(--glass-shadow);
+	position: relative;
+	overflow: hidden;
 }
 
 .account-header h1 {
@@ -77,13 +38,15 @@
 
 /* Section Styles */
 .account-section {
-	background: var(--account-card-bg);
-	border: 1px solid var(--account-card-border);
-	border-radius: 14px;
+	background: var(--glass-bg);
+	border: 1px solid var(--glass-border);
+	border-radius: 16px;
 	padding: 2rem;
-	backdrop-filter: blur(var(--account-card-blur)) saturate(140%);
-	-webkit-backdrop-filter: blur(var(--account-card-blur)) saturate(140%);
-	box-shadow: var(--account-card-shadow), var(--account-card-highlight);
+	backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+	-webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+	box-shadow: 0 18px 50px var(--glass-shadow);
+	position: relative;
+	overflow: hidden;
 }
 
 .section-header {
@@ -119,12 +82,9 @@
 	align-items: center;
 	gap: 1rem;
 	padding: 2rem 1rem;
-	background: var(--profile-well-bg);
+	background: var(--color-surface-tertiary);
 	border-radius: 14px;
-	border: 1px solid var(--profile-well-border);
-	backdrop-filter: blur(var(--profile-well-blur));
-	-webkit-backdrop-filter: blur(var(--profile-well-blur));
-	box-shadow: var(--profile-well-shadow);
+	border: 1px solid var(--color-divider);
 }
 
 .profile-picture-container {
@@ -135,10 +95,8 @@
 	flex-shrink: 0;
 	padding: 12px;
 	border-radius: 50%;
-	background: var(--avatar-halo-bg);
-	border: 1px solid var(--avatar-halo-border);
-	backdrop-filter: blur(var(--avatar-halo-blur));
-	-webkit-backdrop-filter: blur(var(--avatar-halo-blur));
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid var(--color-divider);
 }
 
 .change-picture-btn {
@@ -246,8 +204,8 @@
 	background: var(--input-glass-bg);
 	border-radius: 12px;
 	border: 1px solid var(--input-glass-border);
-	backdrop-filter: blur(18px);
-	-webkit-backdrop-filter: blur(18px);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
 }
 
 /* Form Groups */
@@ -279,8 +237,8 @@
 	color: inherit;
 	font-size: 1rem;
 	transition: border-color 0.2s, background 0.2s;
-	backdrop-filter: blur(18px);
-	-webkit-backdrop-filter: blur(18px);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
 }
 
 .form-group input:focus {
