@@ -29,6 +29,7 @@ body,
 	flex-direction: column;
 	margin-left: 80px;
 	width: calc(100% - 80px);
+	margin-top: 81px;
 }
 
 .main-content {
@@ -37,6 +38,7 @@ body,
 	max-width: 1400px;
 	margin: 0 auto;
 	width: 100%;
+	overflow-y: auto;
 }
 
 /* Responsive Layout */

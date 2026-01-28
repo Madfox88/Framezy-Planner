@@ -9,12 +9,15 @@
   background: var(--glass-bg-heavy);
   border: 1px solid var(--glass-border-heavy);
   gap: var(--space-xl);
-  transition: all var(--transition-base);
   box-shadow: 0 18px 55px var(--glass-shadow);
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 80px;
+  right: 0;
   z-index: 100;
   box-sizing: border-box;
   overflow: visible;
+  flex-shrink: 0;
 }
 
 .top-bar-left {
@@ -44,6 +47,11 @@
   font-weight: var(--font-weight-bold);
 }
 
+.greeting-name {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-bold);
+}
+
 .date-time {
   margin: 0;
   font-size: var(--font-size-sm);
@@ -61,6 +69,8 @@
 /* Workspace Selector */
 .workspace-selector {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .workspace-btn {
@@ -108,46 +118,31 @@
 }
 
 .workspace-panel {
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
-  margin-top: 0;
+  position: fixed;
+  top: 85px;
+  left: auto;
   background: var(--glass-bg-heavy);
   border: 1px solid var(--glass-border-heavy);
   border-radius: var(--radius-lg);
-  min-width: 240px;
-  max-width: 320px;
+  min-width: 200px;
   box-shadow: 0 18px 55px var(--glass-shadow);
-  z-index: 9999;
+  z-index: 1001;
   overflow: hidden;
-  transform: translate3d(0, 8px, 0);
-  opacity: 0;
-  animation: workspace-panel-in 180ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-  will-change: transform, opacity;
+  animation: menu-fade-in 200ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  will-change: opacity;
 }
 
-.workspace-panel.portal {
-  position: fixed;
-  top: auto;
-  right: auto;
-  margin-top: 0;
-}
 
-@keyframes workspace-panel-in {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 8px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
 
 .workspace-item-wrapper {
   display: flex;
   align-items: center;
   position: relative;
+  transition: all var(--transition-fast);
+}
+
+.workspace-item-wrapper:hover {
+  background: var(--color-surface-secondary);
 }
 
 .workspace-item-wrapper:hover .workspace-delete-btn {
@@ -165,6 +160,7 @@
   text-align: left;
   cursor: pointer;
   transition: all var(--transition-fast);
+  width: 100%;
 }
 
 .workspace-delete-btn {
@@ -188,7 +184,6 @@
 }
 
 .workspace-item:hover {
-  background: var(--color-surface-secondary);
   color: var(--color-text-primary);
 }
 
@@ -216,7 +211,6 @@
 /* Profile Menu */
 .profile-menu-container {
   position: relative;
-  z-index: 101;
   overflow: visible;
 }
 
@@ -235,29 +229,30 @@
 }
 
 .profile-menu {
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
-  margin-top: var(--space-lg);
+  position: fixed;
+  top: 85px;
+  right: auto;
   background: var(--glass-bg-heavy);
   border: 1px solid var(--glass-border-heavy);
   border-radius: var(--radius-lg);
   min-width: 200px;
   box-shadow: 0 18px 55px var(--glass-shadow);
-  z-index: 9999;
+  z-index: 1001;
   overflow: hidden;
-  transition: all var(--transition-base);
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+  animation: menu-fade-in 200ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  will-change: opacity;
 }
 
-.profile-menu.portal {
-  position: fixed;
-  top: auto;
-  right: auto;
-  margin-top: 0;
+@keyframes menu-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
+
+
 
 .profile-header {
   padding: var(--space-md) var(--space-lg);
@@ -379,29 +374,4 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .top-bar {
-    flex-direction: column;
-    padding: var(--space-lg);
-    gap: var(--space-lg);
-    text-align: center;
-  }
 
-  .top-bar-left {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .greeting-text {
-    font-size: var(--font-size-xl);
-  }
-
-  .date-time {
-    font-size: var(--font-size-sm);
-  }
-
-  .top-bar-right {
-    width: 100%;
-    justify-content: center;
-  }
-}
