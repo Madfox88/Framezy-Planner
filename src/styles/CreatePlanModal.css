@@ -1,0 +1,166 @@
+/* CreatePlanModal */
+
+.create-plan-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.create-plan-modal-content {
+  background: var(--glass-bg-heavy);
+  border: 1px solid var(--glass-border-heavy);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modal-fade-in 200ms ease-out forwards;
+}
+
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.create-plan-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg) var(--space-xl);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.create-plan-modal-header h2 {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.create-plan-modal-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.create-plan-modal-close:hover {
+  color: var(--color-text-secondary);
+}
+
+.create-plan-modal-form {
+  padding: var(--space-lg) var(--space-xl);
+}
+
+.create-plan-form-group {
+  margin-bottom: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.create-plan-form-group label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.create-plan-form-group input,
+.create-plan-form-group textarea {
+  background: var(--color-surface-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  transition: border-color var(--transition-fast);
+}
+
+.create-plan-form-group input:focus,
+.create-plan-form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: var(--color-surface-secondary);
+}
+
+.create-plan-form-group input:disabled,
+.create-plan-form-group textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.create-plan-form-error {
+  background: rgba(255, 59, 48, 0.1);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.create-plan-form-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-end;
+  margin-top: var(--space-xl);
+}
+
+.create-plan-form-button-cancel,
+.create-plan-form-button-submit {
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: none;
+}
+
+.create-plan-form-button-cancel {
+  background: var(--color-surface-secondary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.create-plan-form-button-cancel:hover:not(:disabled) {
+  background: var(--color-surface-tertiary);
+}
+
+.create-plan-form-button-submit {
+  background: var(--color-accent);
+  color: white;
+}
+
+.create-plan-form-button-submit:hover:not(:disabled) {
+  background: var(--color-accent-dark);
+}
+
+.create-plan-form-button-cancel:disabled,
+.create-plan-form-button-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

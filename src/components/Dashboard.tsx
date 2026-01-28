@@ -1,32 +1,42 @@
+import { useState } from 'react'
+import { CreatePlanModal } from './CreatePlanModal'
 import '../styles/DashboardNew.css'
 
 const Dashboard = () => {
-	return (
-		<div className="dashboard">
-			<section className="dashboard-grid">
-				<div className="stat-card glass">
-					<h3>Tasks due</h3>
-					<div className="stat-value">8</div>
-					<p className="stat-label">Today</p>
-				</div>
-				<div className="stat-card glass">
-					<h3>Focus time</h3>
-					<div className="stat-value">4h</div>
-					<p className="stat-label">Scheduled</p>
-				</div>
-				<div className="stat-card glass">
-					<h3>Goals</h3>
-					<div className="stat-value">63%</div>
-					<p className="stat-label">On track</p>
-				</div>
-				<div className="stat-card glass">
-					<h3>Habits</h3>
-					<div className="stat-value">5/7</div>
-					<p className="stat-label">Completed</p>
-				</div>
-			</section>
+	const [isCreatePlanOpen, setIsCreatePlanOpen] = useState(false)
 
-			<section className="dashboard-grid-sections">
+	return (
+		<>
+			<div className="dashboard">
+				<section className="dashboard-grid">
+					<div className="stat-card glass">
+						<h3>Active Plans</h3>
+						<button 
+							className="stat-card-button"
+							onClick={() => setIsCreatePlanOpen(true)}
+							title="Create a new plan"
+						>
+							+ New Plan
+						</button>
+					</div>
+					<div className="stat-card glass">
+						<h3>Tasks due</h3>
+						<div className="stat-value">8</div>
+						<p className="stat-label">Today</p>
+					</div>
+					<div className="stat-card glass">
+						<h3>Focus time</h3>
+						<div className="stat-value">4h</div>
+						<p className="stat-label">Scheduled</p>
+					</div>
+					<div className="stat-card glass">
+						<h3>Goals</h3>
+						<div className="stat-value">63%</div>
+						<p className="stat-label">On track</p>
+					</div>
+				</section>
+
+				<section className="dashboard-grid-sections">
 				<div className="dashboard-section glass">
 					<h2>Today’s Schedule</h2>
 					<div className="today-schedule">
@@ -96,7 +106,9 @@ const Dashboard = () => {
 					</div>
 				</div>
 			</section>
-		</div>
+
+			<CreatePlanModal isOpen={isCreatePlanOpen} onClose={() => setIsCreatePlanOpen(false)} />
+		</>
 	)
 }
 

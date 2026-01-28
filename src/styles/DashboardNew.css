@@ -21,6 +21,9 @@
 	box-shadow: 0 18px 50px var(--glass-shadow);
 	position: relative;
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .stat-card h3 {
@@ -28,6 +31,30 @@
 	text-transform: uppercase;
 	letter-spacing: 0.12em;
 	color: var(--color-text-tertiary);
+	margin: 0;
+}
+
+.stat-card-button {
+	background: var(--color-accent);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	padding: 0.75rem 1.25rem;
+	font-size: 0.95rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all var(--transition-fast);
+	margin-top: 1rem;
+	align-self: flex-start;
+}
+
+.stat-card-button:hover {
+	background: var(--color-accent-dark);
+	transform: translateY(-2px);
+}
+
+.stat-card-button:active {
+	transform: translateY(0);
 }
 
 .stat-value {
@@ -39,6 +66,7 @@
 
 .stat-label {
 	color: var(--color-text-secondary);
+	margin: 0;
 }
 
 .dashboard-grid-sections {

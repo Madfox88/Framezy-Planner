@@ -11,6 +11,7 @@ import AccountPanel from './components/AccountPanel'
 import { ThemeProvider } from './contexts/ThemeContext'
 import { WorkspaceProvider } from './contexts/WorkspaceContext'
 import { ProfileProvider } from './contexts/ProfileContext'
+import { PlanProvider } from './contexts/PlanContext'
 
 type AppSection = 'dashboard' | 'tasks' | 'goals' | 'calendar' | 'settings' | 'account'
 
@@ -64,7 +65,9 @@ function App() {
     <ThemeProvider>
       <WorkspaceProvider>
         <ProfileProvider>
-          <AppShell />
+          <PlanProvider>
+            <AppShell />
+          </PlanProvider>
         </ProfileProvider>
       </WorkspaceProvider>
     </ThemeProvider>
