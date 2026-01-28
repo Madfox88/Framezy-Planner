@@ -1,0 +1,314 @@
+/* ============================================
+	 FRAMEZY PLANNER - APPLE LIQUID GLASS THEME
+	 ============================================ */
+
+/* Root Theme Variables */
+:root {
+	/* Color System - Light Mode (default) */
+	--color-bg-primary: #fafafa;
+	--color-bg-secondary: #f5f5f5;
+	--color-bg-tertiary: #efefef;
+
+	--color-surface-primary: rgba(255, 255, 255, 0.65);
+	--color-surface-secondary: rgba(255, 255, 255, 0.55);
+	--color-surface-tertiary: rgba(255, 255, 255, 0.45);
+
+	/* Background overlay for readability */
+	--bg-overlay: rgba(255, 255, 255, 0.28);
+
+	/* Background image */
+	--app-bg-image: url('/background_light_theme.jpg');
+
+	/* Glassmorphism (light) */
+	--glass-bg: rgba(255, 255, 255, 0.38);
+	--glass-border: rgba(255, 255, 255, 0.55);
+	--glass-border-light: 1px solid rgba(255, 255, 255, 0.55);
+	--glass-highlight: rgba(255, 255, 255, 0.45);
+	--glass-shadow: rgba(0, 0, 0, 0.10);
+	--glass-blur: 24px;
+	--glass-bg-heavy: rgba(255, 255, 255, 0.48);
+	--glass-border-heavy: rgba(255, 255, 255, 0.60);
+	--glass-blur-heavy: 32px;
+
+	/* Card title color (light) */
+	--card-title-color: #111111;
+
+	/* Account glass system (light) */
+	--account-card-bg: rgba(255, 255, 255, 0.22);
+	--account-card-border: rgba(255, 255, 255, 0.25);
+	--account-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+	--account-card-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+	--account-card-blur: 22px;
+
+	--profile-well-bg: rgba(255, 255, 255, 0.14);
+	--profile-well-border: rgba(255, 255, 255, 0.18);
+	--profile-well-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.25);
+	--profile-well-blur: 30px;
+
+	--input-glass-bg: rgba(255, 255, 255, 0.12);
+	--input-glass-bg-focus: rgba(255, 255, 255, 0.18);
+	--input-glass-border: rgba(255, 255, 255, 0.22);
+	--input-glass-border-focus: rgba(255, 255, 255, 0.35);
+
+	--avatar-halo-bg: rgba(255, 255, 255, 0.18);
+	--avatar-halo-border: rgba(255, 255, 255, 0.35);
+	--avatar-halo-blur: 14px;
+
+	--color-text-primary: #1d1d1d;
+	--color-text-secondary: #565656;
+	--color-text-tertiary: #8e8e93;
+
+	--color-border: rgba(0, 0, 0, 0.1);
+	--color-border-light: rgba(0, 0, 0, 0.06);
+	--color-divider: rgba(0, 0, 0, 0.08);
+
+	/* Accent Colors */
+	--color-accent: #ff6b6b;
+	--color-accent-light: #ff8080;
+	--color-accent-dark: #ff5252;
+
+	--color-success: #34c759;
+	--color-warning: #ff9500;
+	--color-error: #ff3b30;
+	--color-info: #30b0c0;
+
+	/* Shadows - Soft and Ambient */
+	--shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.04);
+	--shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.06);
+	--shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+	--shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+	--shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.12);
+
+	/* Elevation - Subtle depth cues */
+	--elevation-1: 0 0.5px 1px rgba(0, 0, 0, 0.04);
+	--elevation-2: 0 1px 2px rgba(0, 0, 0, 0.06);
+	--elevation-3: 0 2px 4px rgba(0, 0, 0, 0.08);
+
+	/* Border Radius Scale */
+	--radius-xs: 4px;
+	--radius-sm: 8px;
+	--radius-md: 12px;
+	--radius-lg: 16px;
+	--radius-xl: 20px;
+	--radius-full: 9999px;
+
+	/* Spacing Scale */
+	--space-xs: 0.25rem;
+	--space-sm: 0.5rem;
+	--space-md: 1rem;
+	--space-lg: 1.5rem;
+	--space-xl: 2rem;
+	--space-2xl: 3rem;
+
+	/* Typography */
+	--font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+	--font-size-xs: 0.75rem;
+	--font-size-sm: 0.875rem;
+	--font-size-base: 1rem;
+	--font-size-lg: 1.125rem;
+	--font-size-xl: 1.25rem;
+	--font-size-2xl: 1.5rem;
+	--font-size-3xl: 2rem;
+
+	--font-weight-regular: 400;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+
+	/* Line Heights */
+	--line-height-tight: 1.2;
+	--line-height-normal: 1.5;
+	--line-height-relaxed: 1.75;
+
+	/* Transitions */
+	--transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	--transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	--transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+	/* Layout */
+	--max-width: 1200px;
+	--header-height: 64px;
+	--sidebar-width: 280px;
+}
+
+/* Dark Mode Theme */
+[data-theme='dark'] {
+	--color-bg-primary: #0a0a0a;
+	--color-bg-secondary: #1a1a1a;
+	--color-bg-tertiary: #2a2a2a;
+
+	--color-surface-primary: rgba(20, 20, 20, 0.65);
+	--color-surface-secondary: rgba(20, 20, 20, 0.55);
+	--color-surface-tertiary: rgba(20, 20, 20, 0.45);
+
+	/* Background overlay for readability */
+	--bg-overlay: rgba(0, 0, 0, 0.40);
+
+	/* Background image */
+	--app-bg-image: url('/background_dark_theme.png');
+
+	/* Glassmorphism (dark) */
+	--glass-bg: rgba(20, 20, 22, 0.42);
+	--glass-border: rgba(255, 255, 255, 0.12);
+	--glass-border-light: 1px solid rgba(255, 255, 255, 0.18);
+	--glass-highlight: rgba(255, 255, 255, 0.10);
+	--glass-shadow: rgba(0, 0, 0, 0.45);
+	--glass-blur: 28px;
+	--glass-bg-heavy: rgba(18, 18, 20, 0.55);
+	--glass-border-heavy: rgba(255, 255, 255, 0.14);
+	--glass-blur-heavy: 36px;
+
+	/* Card title color (dark) */
+	--card-title-color: #e0e0e0;
+
+	/* Account glass system (dark) */
+	--account-card-bg: rgba(20, 20, 20, 0.28);
+	--account-card-border: rgba(255, 255, 255, 0.18);
+	--account-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+	--account-card-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+	--account-card-blur: 22px;
+
+	--profile-well-bg: rgba(20, 20, 20, 0.18);
+	--profile-well-border: rgba(255, 255, 255, 0.18);
+	--profile-well-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.25);
+	--profile-well-blur: 30px;
+
+	--input-glass-bg: rgba(20, 20, 20, 0.22);
+	--input-glass-bg-focus: rgba(255, 255, 255, 0.18);
+	--input-glass-border: rgba(255, 255, 255, 0.22);
+	--input-glass-border-focus: rgba(255, 255, 255, 0.35);
+
+	--avatar-halo-bg: rgba(255, 255, 255, 0.10);
+	--avatar-halo-border: rgba(255, 255, 255, 0.18);
+	--avatar-halo-blur: 16px;
+
+	--color-text-primary: #f5f5f5;
+	--color-text-secondary: #a0a0a0;
+	--color-text-tertiary: #727272;
+
+	--color-border: rgba(255, 255, 255, 0.15);
+	--color-border-light: rgba(255, 255, 255, 0.08);
+	--color-divider: rgba(255, 255, 255, 0.1);
+
+	/* Slightly desaturated accent for dark mode */
+	--color-accent: #ff6b6b;
+	--color-accent-light: #ff8080;
+	--color-accent-dark: #ff5252;
+
+	--color-success: #30b767;
+	--color-warning: #ff9500;
+	--color-error: #ff453a;
+	--color-info: #32ade6;
+
+	/* Shadows for dark mode - more subtle */
+	--shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.3);
+	--shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.4);
+	--shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+	--shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+	--shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.7);
+}
+
+/* Base Styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 16px;
+	min-height: 100vh;
+	background-image: var(--app-bg-image);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	position: relative;
+}
+
+html::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	background: var(--bg-overlay);
+	z-index: 0;
+	pointer-events: none;
+}
+
+body {
+	font-family: var(--font-family);
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-normal);
+	color: var(--color-text-primary);
+	background: transparent;
+	min-height: 100vh;
+	position: relative;
+	transition: color var(--transition-base);
+}
+
+/* Root Element Layering */
+#root {
+	position: relative;
+	z-index: 1;
+	min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: var(--font-weight-semibold);
+	line-height: var(--line-height-tight);
+	margin: 0;
+}
+
+p {
+	margin: 0;
+	color: var(--color-text-secondary);
+}
+
+a {
+	color: var(--color-accent);
+	text-decoration: none;
+	transition: color var(--transition-fast);
+}
+
+/* Glass Utility Classes */
+.glass {
+	background: var(--glass-bg);
+	border: 1px solid var(--glass-border);
+	border-radius: 16px;
+	-webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+	backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+	box-shadow: 0 18px 50px var(--glass-shadow);
+	position: relative;
+	overflow: hidden;
+}
+
+.glass::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	box-shadow: inset 0 1px 0 var(--glass-highlight);
+	pointer-events: none;
+}
+
+.glass-heavy {
+	background: var(--glass-bg-heavy);
+	border: 1px solid var(--glass-border-heavy);
+	border-radius: 18px;
+	-webkit-backdrop-filter: blur(var(--glass-blur-heavy)) saturate(160%);
+	backdrop-filter: blur(var(--glass-blur-heavy)) saturate(160%);
+	box-shadow: 0 18px 55px var(--glass-shadow);
+	position: relative;
+	overflow: hidden;
+}
+
+.glass-heavy::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	box-shadow: inset 0 1px 0 var(--glass-highlight);
+	pointer-events: none;
+}

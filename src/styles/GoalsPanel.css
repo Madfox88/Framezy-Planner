@@ -1,0 +1,45 @@
+.goals-panel {
+	padding: 2rem;
+	border-radius: 18px;
+}
+
+.panel-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.5rem;
+}
+
+.panel-header h2 {
+	color: var(--card-title-color);
+}
+
+.panel-action {
+	background: var(--color-accent);
+	color: white;
+}
+
+.goal-card {
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	padding: 1.25rem;
+	border-radius: 16px;
+}
+
+.goal-card h3 {
+	margin-bottom: 0.5rem;
+	color: var(--card-title-color);
+}
+
+.goal-progress {
+	margin-top: 1rem;
+	background: rgba(255, 255, 255, 0.12);
+	border-radius: 999px;
+	overflow: hidden;
+	height: 8px;
+}
+
+.goal-progress-bar {
+	height: 100%;
+	background: linear-gradient(90deg, #ff6b6b, #ff5252);
+}

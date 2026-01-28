@@ -1,0 +1,324 @@
+/* Account Panel Styles */
+.account-panel {
+	padding: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+	--account-card-bg: rgba(255, 255, 255, 0.22);
+	--account-card-border: rgba(255, 255, 255, 0.25);
+	--account-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+	--account-card-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+	--account-card-blur: 22px;
+
+	--profile-well-bg: rgba(255, 255, 255, 0.14);
+	--profile-well-border: rgba(255, 255, 255, 0.18);
+	--profile-well-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.25);
+	--profile-well-blur: 30px;
+
+	--input-glass-bg: rgba(255, 255, 255, 0.12);
+	--input-glass-bg-focus: rgba(255, 255, 255, 0.18);
+	--input-glass-border: rgba(255, 255, 255, 0.22);
+	--input-glass-border-focus: rgba(255, 255, 255, 0.35);
+
+	--avatar-halo-bg: rgba(255, 255, 255, 0.18);
+	--avatar-halo-border: rgba(255, 255, 255, 0.35);
+	--avatar-halo-blur: 14px;
+}
+
+[data-theme='dark'] .account-panel {
+	--account-card-bg: rgba(20, 20, 20, 0.28);
+	--account-card-border: rgba(255, 255, 255, 0.18);
+	--account-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+	--account-card-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+	--account-card-blur: 22px;
+
+	--profile-well-bg: rgba(20, 20, 20, 0.18);
+	--profile-well-border: rgba(255, 255, 255, 0.18);
+	--profile-well-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.25);
+	--profile-well-blur: 30px;
+
+	--input-glass-bg: rgba(20, 20, 20, 0.22);
+	--input-glass-bg-focus: rgba(255, 255, 255, 0.18);
+	--input-glass-border: rgba(255, 255, 255, 0.22);
+	--input-glass-border-focus: rgba(255, 255, 255, 0.35);
+
+	--avatar-halo-bg: rgba(255, 255, 255, 0.10);
+	--avatar-halo-border: rgba(255, 255, 255, 0.18);
+	--avatar-halo-blur: 16px;
+}
+
+.account-header {
+	margin-bottom: 2rem;
+	padding: 5mm;
+	background: var(--account-card-bg);
+	border: 1px solid var(--account-card-border);
+	border-radius: 14px;
+	backdrop-filter: blur(var(--account-card-blur)) saturate(140%);
+	-webkit-backdrop-filter: blur(var(--account-card-blur)) saturate(140%);
+	box-shadow: var(--account-card-shadow), var(--account-card-highlight);
+}
+
+.account-header h1 {
+	font-size: 2rem;
+	color: var(--card-title-color);
+	margin: 0 0 0.5rem 0;
+}
+
+.account-subtitle {
+	color: #ffffff;
+	font-size: 1rem;
+	margin: 0;
+}
+
+.account-content {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+/* Section Styles */
+.account-section {
+	background: var(--account-card-bg);
+	border: 1px solid var(--account-card-border);
+	border-radius: 14px;
+	padding: 2rem;
+	backdrop-filter: blur(var(--account-card-blur)) saturate(140%);
+	-webkit-backdrop-filter: blur(var(--account-card-blur)) saturate(140%);
+	box-shadow: var(--account-card-shadow), var(--account-card-highlight);
+}
+
+.section-header {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 1.5rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.section-icon {
+	color: #ff6b6b;
+	font-size: 1.5rem;
+}
+
+.section-header h2 {
+	font-size: 1.5rem;
+	color: var(--card-title-color);
+	margin: 0;
+}
+
+.section-body {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+/* Profile Picture Section */
+.profile-picture-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	padding: 2rem 1rem;
+	background: var(--profile-well-bg);
+	border-radius: 14px;
+	border: 1px solid var(--profile-well-border);
+	backdrop-filter: blur(var(--profile-well-blur));
+	-webkit-backdrop-filter: blur(var(--profile-well-blur));
+	box-shadow: var(--profile-well-shadow);
+}
+
+.profile-picture-container {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	padding: 12px;
+	border-radius: 50%;
+	background: var(--avatar-halo-bg);
+	border: 1px solid var(--avatar-halo-border);
+	backdrop-filter: blur(var(--avatar-halo-blur));
+	-webkit-backdrop-filter: blur(var(--avatar-halo-blur));
+}
+
+.change-picture-btn {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: #ff6b6b;
+	border: 2px solid rgba(255, 255, 255, 0.35);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.2s;
+	font-size: 0.85rem;
+}
+
+.change-picture-btn:hover:not(:disabled) {
+	background: #ff5252;
+	transform: scale(1.1);
+}
+
+.change-picture-btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.profile-picture-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.btn-link {
+	background: none;
+	border: none;
+	color: #ff6b6b;
+	font-size: 0.95rem;
+	font-weight: 500;
+	cursor: pointer;
+	text-align: center;
+	padding: 0;
+	transition: color 0.2s;
+}
+
+.btn-link:hover:not(:disabled) {
+	color: #ff5252;
+	text-decoration: underline;
+}
+
+.btn-link:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.btn-link-danger {
+	background: none;
+	border: none;
+	color: #eb5757;
+	font-size: 0.95rem;
+	font-weight: 500;
+	cursor: pointer;
+	text-align: center;
+	padding: 0;
+	transition: color 0.2s;
+}
+
+.btn-link-danger:hover:not(:disabled) {
+	color: #d84343;
+	text-decoration: underline;
+}
+
+.btn-link-danger:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.profile-picture-hint {
+	color: #999;
+	font-size: 0.85rem;
+	margin: 0;
+}
+
+/* Info Row */
+.info-row {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.info-row label {
+	color: #999;
+	font-size: 0.9rem;
+	font-weight: 500;
+}
+
+.info-value {
+	color: inherit;
+	font-size: 1rem;
+	padding: 0.75rem;
+	background: var(--input-glass-bg);
+	border-radius: 12px;
+	border: 1px solid var(--input-glass-border);
+	backdrop-filter: blur(18px);
+	-webkit-backdrop-filter: blur(18px);
+}
+
+/* Form Groups */
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.form-group label {
+	color: #e0e0e0;
+	font-size: 0.95rem;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.input-icon {
+	color: #ff6b6b;
+	font-size: 1rem;
+}
+
+.form-group input {
+	padding: 0.75rem;
+	background: var(--input-glass-bg);
+	border: 1px solid var(--input-glass-border);
+	border-radius: 12px;
+	color: inherit;
+	font-size: 1rem;
+	transition: border-color 0.2s, background 0.2s;
+	backdrop-filter: blur(18px);
+	-webkit-backdrop-filter: blur(18px);
+}
+
+.form-group input:focus {
+	outline: none;
+	background: var(--input-glass-bg-focus);
+	border-color: var(--input-glass-border-focus);
+}
+
+.form-group input:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.input-with-button {
+	display: flex;
+	gap: 0.75rem;
+}
+
+.input-with-button input {
+	flex: 1;
+}
+
+/* Messages */
+.message {
+	padding: 1rem;
+	border-radius: 6px;
+	font-size: 0.95rem;
+	animation: slideIn 0.3s ease;
+}
+
+.message.success {
+	background: rgba(39, 174, 96, 0.1);
+	border: 1px solid rgba(39, 174, 96, 0.3);
+	color: #27ae60;
+}
+
+.message.error {
+	background: rgba(255, 107, 107, 0.1);
+	border: 1px solid rgba(255, 107, 107, 0.3);
+	color: #ff6b6b;
+}
