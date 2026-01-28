@@ -108,6 +108,7 @@ const Dashboard = () => {
 			</section>
 
 			<CreatePlanModal isOpen={isCreatePlanOpen} onClose={() => setIsCreatePlanOpen(false)} />
+			</div>
 		</>
 	)
 }
