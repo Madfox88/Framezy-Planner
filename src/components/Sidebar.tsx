@@ -1,11 +1,12 @@
-import { FiBarChart2, FiCheckSquare, FiTarget, FiCalendar, FiSettings, FiUser } from 'react-icons/fi'
+import { FiHome, FiCheckSquare, FiTarget, FiCalendar, FiSettings, FiUser } from 'react-icons/fi'
 import type { ReactElement } from 'react'
+import logo from '../assets/logo_dark.png'
 import '../styles/Sidebar.css'
 
 type AppSection = 'dashboard' | 'tasks' | 'goals' | 'calendar' | 'settings' | 'account'
 
 const icons: Record<AppSection, ReactElement> = {
-	dashboard: <FiBarChart2 />,
+	dashboard: <FiHome />,
 	tasks: <FiCheckSquare />,
 	goals: <FiTarget />,
 	calendar: <FiCalendar />,
@@ -22,7 +23,9 @@ type SidebarProps = {
 const Sidebar = ({ activeSection, sections, onSelectSection }: SidebarProps) => {
 	return (
 		<aside className="sidebar">
-			<div className="sidebar-logo">FP</div>
+			<div className="sidebar-logo">
+				<img src={logo} alt="Framezy Planner" />
+			</div>
 			<nav className="sidebar-nav">
 				{(Object.keys(sections) as AppSection[]).map((section) => (
 					<button

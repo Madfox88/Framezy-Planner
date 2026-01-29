@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { CreatePlanModal } from './CreatePlanModal'
+import PlansList from './PlansList'
 import '../styles/DashboardNew.css'
 
 const Dashboard = () => {
@@ -106,6 +107,8 @@ const Dashboard = () => {
 					</div>
 				</div>
 			</section>
+
+			<PlansList />
 
 			<CreatePlanModal isOpen={isCreatePlanOpen} onClose={() => setIsCreatePlanOpen(false)} />
 			</div>

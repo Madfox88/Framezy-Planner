@@ -1,0 +1,107 @@
+.plans-list-container {
+	margin-top: 2rem;
+}
+
+.plans-list-container h2 {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin-bottom: 1.5rem;
+	color: var(--color-text-primary);
+}
+
+.plans-loading,
+.plans-error {
+	padding: 2rem;
+	text-align: center;
+	color: var(--color-text-secondary);
+	border-radius: 8px;
+	background: var(--color-surface-secondary);
+}
+
+.plans-error {
+	color: var(--color-status-error, #ff6b6b);
+}
+
+.plans-empty {
+	padding: 3rem 2rem;
+	text-align: center;
+	color: var(--color-text-secondary);
+	border: 1px dashed var(--color-border);
+	border-radius: 8px;
+	background: var(--color-surface-secondary);
+}
+
+.plans-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: var(--space-md);
+}
+
+.plan-card {
+	padding: var(--space-md);
+	border-radius: 8px;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	cursor: pointer;
+}
+
+.plan-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+	margin-bottom: 0.75rem;
+	gap: var(--space-md);
+}
+
+.plan-card h3 {
+	font-size: 1.125rem;
+	font-weight: 600;
+	color: var(--color-text-primary);
+	margin: 0;
+	flex: 1;
+}
+
+.plan-status {
+	font-size: 0.75rem;
+	font-weight: 500;
+	padding: 0.25rem 0.75rem;
+	border-radius: 4px;
+	text-transform: capitalize;
+	white-space: nowrap;
+}
+
+.plan-status.active {
+	background: var(--color-success, rgba(46, 204, 113, 0.1));
+	color: var(--color-success, #2ecc71);
+}
+
+.plan-status.archived {
+	background: var(--color-warning, rgba(241, 196, 15, 0.1));
+	color: var(--color-warning, #f1c40f);
+}
+
+.plan-description {
+	font-size: 0.9375rem;
+	color: var(--color-text-secondary);
+	margin: 0 0 0.75rem 0;
+	line-height: 1.5;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.plan-meta {
+	display: flex;
+	gap: var(--space-sm);
+	font-size: 0.8125rem;
+	color: var(--color-text-tertiary);
+}
+
+.plan-date {
+	display: block;
+}
