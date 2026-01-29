@@ -8,7 +8,9 @@ import GoalsPanel from './components/GoalsPanel'
 import CalendarPanel from './components/CalendarPanel'
 import SettingsPanel from './components/SettingsPanel'
 import AccountPanel from './components/AccountPanel'
+import AuthPage from './components/AuthPage'
 import { ThemeProvider } from './contexts/ThemeContext'
+import { AuthProvider, useAuth } from './contexts/AuthContext'
 import { WorkspaceProvider } from './contexts/WorkspaceContext'
 import { ProfileProvider } from './contexts/ProfileContext'
 import { PlanProvider } from './contexts/PlanContext'
@@ -53,23 +55,45 @@ function AppShell() {
         sections={sectionLabels}
       />
       <div className="main-container">
-        <TopBar activeSectionLabel={sectionLabels[activeSection]} />
+        <TopBar />
         <main className="main-content">{content}</main>
       </div>
     </div>
   )
 }
 
+function AuthenticatedApp() {
+  const { user, loading } = useAuth()
+
+  if (loading) {
+    return (
+      <div className="app-loading">
+        <div>Loading...</div>
+      </div>
+    )
+  }
+
+  if (!user) {
+    return <AuthPage />
+  }
+
+  return (
+    <WorkspaceProvider userId={user.id}>
+      <ProfileProvider>
+        <PlanProvider>
+          <AppShell />
+        </PlanProvider>
+      </ProfileProvider>
+    </WorkspaceProvider>
+  )
+}
+
 function App() {
   return (
     <ThemeProvider>
-      <WorkspaceProvider>
-        <ProfileProvider>
-          <PlanProvider>
-            <AppShell />
-          </PlanProvider>
-        </ProfileProvider>
-      </WorkspaceProvider>
+      <AuthProvider>
+        <AuthenticatedApp />
+      </AuthProvider>
     </ThemeProvider>
   )
 }

@@ -13,6 +13,18 @@ const PlansList = () => {
 		}
 	}, [activeWorkspace?.id, refreshPlans])
 
+	// If no active workspace, show neutral state
+	if (!activeWorkspace) {
+		return (
+			<div className="plans-list-container">
+				<h2>Plans</h2>
+				<div className="plans-empty">
+					<p>Select a workspace to view plans.</p>
+				</div>
+			</div>
+		)
+	}
+
 	if (loading) {
 		return <div className="plans-loading">Loading plans...</div>
 	}

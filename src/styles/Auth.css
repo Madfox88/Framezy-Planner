@@ -1,0 +1,127 @@
+.auth-page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	padding: var(--space-lg);
+}
+
+.auth-container {
+	width: 100%;
+	max-width: 420px;
+	padding: var(--space-2xl);
+	text-align: center;
+}
+
+.auth-container h1 {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: var(--space-sm);
+	color: var(--color-text-primary);
+}
+
+.auth-subtitle {
+	color: var(--color-text-secondary);
+	margin-bottom: var(--space-xl);
+}
+
+.auth-form {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-lg);
+	margin-bottom: var(--space-lg);
+}
+
+.auth-form .form-group {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+	text-align: left;
+}
+
+.auth-form label {
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: var(--color-text-primary);
+}
+
+.auth-form input {
+	padding: var(--space-md);
+	border: 1px solid var(--glass-border);
+	border-radius: var(--radius-md);
+	background: var(--input-glass-bg);
+	color: var(--color-text-primary);
+	font-size: 1rem;
+	transition: all var(--transition-fast);
+}
+
+.auth-form input:focus {
+	outline: none;
+	background: var(--input-glass-bg-focus);
+	border-color: var(--color-accent);
+	box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+.auth-error {
+	padding: var(--space-md);
+	background: rgba(255, 59, 48, 0.1);
+	border: 1px solid rgba(255, 59, 48, 0.3);
+	border-radius: var(--radius-md);
+	color: #ff3b30;
+	font-size: 0.875rem;
+}
+
+.auth-message {
+	padding: var(--space-md);
+	background: rgba(52, 199, 89, 0.1);
+	border: 1px solid rgba(52, 199, 89, 0.3);
+	border-radius: var(--radius-md);
+	color: #34c759;
+	font-size: 0.875rem;
+}
+
+.auth-submit-btn {
+	padding: var(--space-md) var(--space-xl);
+	background: var(--color-accent);
+	color: white;
+	border: none;
+	border-radius: var(--radius-md);
+	font-weight: 600;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: all var(--transition-fast);
+}
+
+.auth-submit-btn:hover:not(:disabled) {
+	background: #ff5c5c;
+	transform: translateY(-1px);
+	box-shadow: var(--shadow-md);
+}
+
+.auth-submit-btn:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.auth-toggle-btn {
+	background: none;
+	border: none;
+	color: var(--color-accent);
+	font-size: 0.875rem;
+	cursor: pointer;
+	text-decoration: underline;
+	transition: opacity var(--transition-fast);
+}
+
+.auth-toggle-btn:hover {
+	opacity: 0.8;
+}
+
+.app-loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	color: var(--color-text-secondary);
+	font-size: 1.125rem;
+}

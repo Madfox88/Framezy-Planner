@@ -3,28 +3,21 @@ import { FiMoon, FiSun, FiChevronDown, FiPlus } from 'react-icons/fi'
 import { useTheme } from '../contexts/ThemeContext'
 import { useWorkspace } from '../contexts/WorkspaceContext'
 import { useProfile } from '../contexts/ProfileContext'
+import { useAuth } from '../contexts/AuthContext'
 import UserAvatar from './UserAvatar'
 import '../styles/TopBar.css'
 
-type TopBarProps = {
-	activeSectionLabel: string
-}
-
-const TopBar = ({ activeSectionLabel }: TopBarProps) => {
+const TopBar = () => {
 	const { theme, toggleTheme } = useTheme()
-	const { workspaces, activeWorkspaceId, setActiveWorkspace, addWorkspace } = useWorkspace()
+	const { workspaces, activeWorkspace, setActiveWorkspace, addWorkspace } = useWorkspace()
 	const { profile } = useProfile()
+	const { signOut } = useAuth()
 	const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false)
 	const [isWorkspaceMenuOpen, setIsWorkspaceMenuOpen] = useState(false)
 	
 	const headerRef = useRef<HTMLElement>(null)
 	const workspaceBtnRef = useRef<HTMLButtonElement>(null)
 	const profileBtnRef = useRef<HTMLButtonElement>(null)
-
-	const activeWorkspace = useMemo(
-		() => workspaces.find((workspace) => workspace.id === activeWorkspaceId) ?? workspaces[0],
-		[workspaces, activeWorkspaceId],
-	)
 
 	const dateLabel = useMemo(() => {
 		return new Date().toLocaleDateString(undefined, {
@@ -186,7 +179,15 @@ const TopBar = ({ activeSectionLabel }: TopBarProps) => {
 							<button className="profile-item">View profile</button>
 							<button className="profile-item">Preferences</button>
 							<div className="profile-divider" />
-							<button className="profile-item">Sign out</button>
+							<button 
+								className="profile-item"
+								onClick={() => {
+									signOut()
+									setIsProfileMenuOpen(false)
+								}}
+							>
+								Sign out
+							</button>
 						</div>
 					)}
 				</div>

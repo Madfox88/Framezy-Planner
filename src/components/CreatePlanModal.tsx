@@ -17,7 +17,7 @@ export const CreatePlanModal = ({ isOpen, onClose }: CreatePlanModalProps) => {
 	const [error, setError] = useState<string | null>(null)
 
 	const { createPlan } = usePlans()
-	const { activeWorkspaceId } = useWorkspace()
+	const { activeWorkspace } = useWorkspace()
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
@@ -25,6 +25,11 @@ export const CreatePlanModal = ({ isOpen, onClose }: CreatePlanModalProps) => {
 
 		if (!title.trim()) {
 			setError('Plan title is required')
+			return
+		}
+
+		if (!activeWorkspace?.id) {
+			setError('No active workspace selected')
 			return
 		}
 
@@ -42,7 +47,7 @@ export const CreatePlanModal = ({ isOpen, onClose }: CreatePlanModalProps) => {
 				description: description.trim() || undefined,
 			}
 
-			await createPlan(input, activeWorkspaceId, authData.user.id)
+			await createPlan(input, activeWorkspace.id, authData.user.id)
 
 			// Reset form and close
 			setTitle('')
